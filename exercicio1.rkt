@@ -6,11 +6,13 @@
 ;; (expt 10 n) é calculado e multiplicado por x para deslocar a vírgula 
 ;; round para remover as casas decimais
 ;; o resultado é dividido por (expt 10 n) para retornar o valor arredondado
+
 (define (arredonda x n)
     (/ (round (* x (expt 10 n)))(expt 10 n))) ;; round(((10 expt n) * x)) / (10 expt n)
 
 
 ;; testes
+
 (check-equal? (arredonda 3.14159265359 1) 3.1)
 (check-equal? (arredonda 3.14159265359 2) 3.14)
 (check-equal? (arredonda 3.14159265359 3) 3.142)
